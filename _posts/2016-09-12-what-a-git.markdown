@@ -1,0 +1,67 @@
+---
+layout: post
+title: "What A Git"
+date: 2016-09-12 22:16:43 -0400
+comments: true
+categories:
+---
+Working on more team based projects has led to a serious increase in my appreciation for, and hatred of, Git. Git is a version control system that allows you to work on a project with a team of contributors without stepping over each others work. After creating a project and initializing it as a Git repository you can being to build out your project. This is your master branch.
+
+As you begin to work on new parts of the project you can create new branches of this project tree and work on specific features of the project without:   
+    A. Messing with the work of your teammates   
+    B. Creating temporary issues with the master   
+    C. Requiring your application to be offline for any period of time   
+
+Cool, so why did I feel like this when using Git?
+![Confused](/assets/what-a-git/cusack.gif)
+
+It turns out many reasons. There's a lot that can be done with a tool like git. My routine use of git really consists of four commands
+``` bash
+# Include added, deleted, or edited files to my git project
+git add .
+
+# Prepare these files to be added ('commited') to my main project on GitHub
+git commit -m "SOME MESSAGE ABOUT YOUR UPLOAD"
+
+# Send ('push') those commited files up to your GitHub repository
+git push
+
+# Navigate through branches
+git checkout NAME OF BRANCH
+```
+
+Git essentially saves each 'commit' of your work as a snapshot of your mini filesystem. If your files don't change, it just uses the version of the file it already has. So as you go through your project and commit changes to your GitHub repository (or other code hosting site) the changes are stored there. It's important to remember that git commands reference your commit history rather than your local save history. This means that when you edit a file locally and don't commit this change any git command you run will note the differences in those files. You can see below how this works visually:
+
+![Branches](/assets/what-a-git/git.branches.png)
+
+As your program evolves git will allow you to easily add your branch files back into your master branch. This branch should be reserved for all of your final working files. This way your project is always in a working state.
+
+Now that's great but as you start to work on a project and you're thinking about other parts of what you're working on, you write a few notes in a file, or just start working on something and forget to go back to it. Just when you think you might be cruising you realize... you've made a bad choice
+
+![You Messed Up Dummy](/assets/what-a-git/messed_up.gif)
+
+Ok so how do you get out of this situation?
+
+First things first... what have you done?!?!
+``` bash
+# get a list of everything that you've done on git, across all branches
+git reflog
+# output
+67b784b HEAD@{19}: checkout: moving from join_club to master
+67b784b HEAD@{20}: checkout: moving from master to join_club
+67b784b HEAD@{21}: pull: Fast-forward
+2a6eff8 HEAD@{22}: commit: removing extra index file
+e30a993 HEAD@{23}: commit: Removed JS error files
+```
+
+OK so now you can determine what the last time you enjoyed working code was and remember the 'HEAD@{index}' for that
+``` bash
+# reset everything!
+git reset HEAD@{index}
+```
+
+Hopefully it doesn't come to this, in order to avoid that let's look at a few other commands:
+
+If you've been working in the same branch as a team mate and made some edits to a file that was the start of an answer, yet they were able to complete and upload the full answer, you'll find that updating your branch with their information won't happen that easily. Git will want you to commit or stash your edited version of the file. In order to avoid that you can simply run the following for the file name causing your issue:
+`git checkout FILE_PATH_AND_NAME`
+This will grab the copy of this file from the last commit. Replacing your working file.
