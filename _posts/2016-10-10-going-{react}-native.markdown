@@ -14,7 +14,7 @@ React Native is a Javascript framework, based on React, used to develop native a
 
 So let's take a look at the ubiquitous starter app...
 
-``` javascript
+{% highlight javascript %}
 import React, { Component } from 'react';
 import { AppRegistry, Text } from 'react-native';
 
@@ -27,7 +27,7 @@ class HelloWorldApp extends Component {
 }
 
 AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
-```
+{% endhighlight %}
 
 ![BOWIE](/assets/going-native/bowie.gif)
 

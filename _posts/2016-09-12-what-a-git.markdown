@@ -16,7 +16,7 @@ Cool, so why did I feel like this when using Git?
 ![Confused](/assets/what-a-git/cusack.gif)
 
 It turns out many reasons. There's a lot that can be done with a tool like git. My routine use of git really consists of four commands   
-``` bash
+{% highlight bash %}
 # Include added, deleted, or edited files to my git project
 git add .
 
@@ -28,7 +28,7 @@ git push
 
 # Navigate through branches
 git checkout NAME OF BRANCH
-```
+{% endhighlight %}
 
 Git essentially saves each 'commit' of your work as a snapshot of your mini filesystem. If your files don't change, it just uses the version of the file it already has. So as you go through your project and commit changes to your GitHub repository (or other code hosting site) the changes are stored there. It's important to remember that git commands reference your commit history rather than your local save history. This means that when you edit a file locally and don't commit this change any git command you run will note the differences in those files. You can see below how this works visually:
 
@@ -43,7 +43,7 @@ Now that's great but as you start to work on a project and you're thinking about
 Ok so how do you get out of this situation?
 
 First things first... what have you done?!?!
-``` bash
+{% highlight bash %}
 # get a list of everything that you've done on git, across all branches
 git reflog
 # output
@@ -52,13 +52,13 @@ git reflog
 67b784b HEAD@{21}: pull: Fast-forward
 2a6eff8 HEAD@{22}: commit: removing extra index file
 e30a993 HEAD@{23}: commit: Removed JS error files
-```
+{% endhighlight %}
 
 OK so now you can determine what the last time you enjoyed working code was and remember the `HEAD@{index}` for that
-``` bash
+{% highlight bash %}
 # reset everything!
 git reset HEAD@{index}
-```
+{% endhighlight %}
 
 Hopefully it doesn't come to this, in order to avoid that let's look at a few other commands:
 
