@@ -12,10 +12,10 @@ As you begin to work on new parts of the project you can create new branches of 
     B. Creating temporary issues with the master   
     C. Requiring your application to be offline for any period of time   
 
-Cool, so why did I feel like this when using Git?
+Cool, so why did I feel like this when using Git?   
 ![Confused](/assets/what-a-git/cusack.gif)
 
-It turns out many reasons. There's a lot that can be done with a tool like git. My routine use of git really consists of four commands
+It turns out many reasons. There's a lot that can be done with a tool like git. My routine use of git really consists of four commands   
 ``` bash
 # Include added, deleted, or edited files to my git project
 git add .
@@ -54,7 +54,7 @@ git reflog
 e30a993 HEAD@{23}: commit: Removed JS error files
 ```
 
-OK so now you can determine what the last time you enjoyed working code was and remember the 'HEAD@{index}' for that
+OK so now you can determine what the last time you enjoyed working code was and remember the `HEAD@{index}` for that
 ``` bash
 # reset everything!
 git reset HEAD@{index}
