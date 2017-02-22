@@ -1,3 +1,18 @@
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+}
+
+.flexcontainer-right {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   -webkit-align-items: flex-end;
+   align-items: flex-end;
+}
+
 /**
  * Site header
  */
@@ -11,7 +26,7 @@
 }
 
 .site-title {
-  font-size: 26px;
+  font-size: 50px;
   font-weight: 300;
   line-height: 56px;
   letter-spacing: -1px;

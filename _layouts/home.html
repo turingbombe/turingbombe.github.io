@@ -6,22 +6,25 @@ layout: default
 
   <h1 class="page-heading">Content</h1>
 
-  {{ content }}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div class="flexcontainer">
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-        <body>
-          <span class="post-body">{{ post.excerpt}}</span>
-        </body>
-      </li>
-    {% endfor %}
-  </ul>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          <body>
+            <span class="post-body">{{ post.content | strip_html | truncatewords: 30 }}</span>
+          </body>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="flexcontainer-right"> <div display=flex>Sup</div></div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 

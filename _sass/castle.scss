@@ -35,9 +35,8 @@ $on-laptop:        800px !default;
   }
 }
 
-// Import partials.
 @import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
+  "castle/base",
+  "castle/layout",
+  "castle/syntax-highlighting"
 ;
