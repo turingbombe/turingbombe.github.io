@@ -1,18 +1,3 @@
-
-.flexcontainer {
-   display: -webkit-flex;
-   display: flex;
-}
-
-.flexcontainer-right {
-   display: -webkit-flex;
-   display: flex;
-   -webkit-flex-direction: column;
-   flex-direction: column;
-   -webkit-align-items: flex-end;
-   align-items: flex-end;
-}
-
 /**
  * Site header
  */
